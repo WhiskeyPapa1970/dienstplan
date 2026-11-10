@@ -1,3 +1,4 @@
+console.log("SCRIPT V05 NEU");
 let aktuellerFahrer = "";
 let aktuellesDatum = "";
 
