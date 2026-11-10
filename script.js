@@ -375,9 +375,13 @@ if (isNaN(von) || isNaN(bis))
 
             const tag =
                 tage[t];
-
-            const datum =
-                tag.toISOString().split("T")[0];
+const datum =
+    tag.getFullYear() +
+    "-" +
+    String(tag.getMonth() + 1).padStart(2, "0") +
+    "-" +
+    String(tag.getDate()).padStart(2, "0");
+   
 
             let daten =
                 plan[
