@@ -1,4 +1,4 @@
-console.log("SCRIPT V05 NEU");
+
 let aktuellerFahrer = "";
 let aktuellesDatum = "";
 
@@ -228,7 +228,7 @@ function offeneDiensteErmitteln() {
                 );
 
             if (stamm) {
-console.log(key);
+
                 liste.push({
                     datum: datum,
                     dienst: stamm.dienst
