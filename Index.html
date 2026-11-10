@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dienstplan V0.5</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        Dienstplan V0.5
+    </div>
+
+    <div class="toolbar">
+
+        <label>Von:</label>
+        <input type="date" id="von">
+
+        <label>Bis:</label>
+        <input type="date" id="bis">
+
+        <button onclick="ladePlan()">
+            Laden
+        </button>
+
+        <button onclick="fahrerHinzufuegen()">
+            + Fahrer
+        </button>
+
+    </div>
+
+    <div class="layout">
+
+        <div class="planbereich">
+
+            <table>
+                <thead id="thead"></thead>
+                <tbody id="tbody"></tbody>
+            </table>
+
+        </div>
+
+        <div class="sidebar">
+
+            <h3>Offene Dienste</h3>
+
+            <div id="offeneDienste"></div>
+
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+
+    <div id="modalOverlay" class="modalOverlay">
+
+        <div class="modal">
+
+            <h2>Planung bearbeiten</h2>
+
+            <label>Art</label>
+
+            <select id="artInput" onchange="artGeaendert()">
+                <option>Dienst</option>
+                <option>Urlaub</option>
+                <option>Krank</option>
+                <option>Zeitausgleich</option>
+                <option>Frei</option>
+            </select>
+
+            <div id="dienstBlock">
+
+                <label>Dienst</label>
+
+                <select id="dienstInput">
+                    <option value="WN01">WN01</option>
+                    <option value="WN02">WN02</option>
+                    <option value="WN03">WN03</option>
+                    <option value="A01">A01</option>
+                    <option value="Reserve">Reserve</option>
+                </select>
+
+                <label>Fahrzeug</label>
+
+                <select id="fahrzeugInput">
+                    <option value="GU-DIXI9">GU-DIXI9</option>
+                    <option value="GU-DIXI6">GU-DIXI6</option>
+
+                    <option value="W4711">W4711</option>
+                    <option value="W4718">W4718</option>
+                    <option value="W4723">W4723</option>
+                    <option value="W4730">W4730</option>
+                    <option value="W4735">W4735</option>
+                </select>
+
+            </div>
+
+            <div class="modalButtons">
+
+                <button onclick="speichernZelle()">
+                    Speichern
+                </button>
+
+                <button onclick="schliessenModal()">
+                    Abbrechen
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
