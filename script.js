@@ -227,7 +227,7 @@ function offeneDiensteErmitteln() {
                 );
 
             if (stamm) {
-
+console.log(datum);
                 liste.push({
                     datum: datum,
                     dienst: stamm.dienst
