@@ -477,11 +477,28 @@ const datum =
 
 window.onload = function () {
 
-    document.getElementById("von").value =
-        "2026-10-01";
+const heute = new Date();
 
-    document.getElementById("bis").value =
-        "2026-10-15";
+const vonDatum =
+    heute.getFullYear() +
+    "-" +
+    String(heute.getMonth() + 1).padStart(2, "0") +
+    "-" +
+    String(heute.getDate()).padStart(2, "0");
 
+document.getElementById("von").value =
+    vonDatum;
+const bis = new Date();
+bis.setDate(bis.getDate() + 14);
+
+const bisDatum =
+    bis.getFullYear() +
+    "-" +
+    String(bis.getMonth() + 1).padStart(2, "0") +
+    "-" +
+    String(bis.getDate()).padStart(2, "0");
+
+document.getElementById("bis").value =
+    bisDatum;
     ladePlan();
 };
