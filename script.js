@@ -133,6 +133,7 @@ function zelleBearbeiten(name, datum) {
     const stamm =
         findeStammdaten(name);
 console.log("STAMM", stamm);
+    console.log("PLAN", plan[k]);
     if (!plan[k]) {
 
         plan[k] = {
