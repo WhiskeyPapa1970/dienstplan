@@ -4,7 +4,7 @@ const supabaseUrl =
 const supabaseKey =
     "sb_publishable_6tO_oqxyRqx241aeypFqTw_JArFTo3-";
 
-const supabase =
+const supabaseClient =
     supabase.createClient(
         supabaseUrl,
         supabaseKey
@@ -511,7 +511,7 @@ document.getElementById("bis").value =
 async function testeSupabase() {
 
     const { data, error } =
-        await supabase
+        await supabaseClient
             .from("Dienste")
             .select("*");
 
