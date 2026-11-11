@@ -17,7 +17,7 @@ let aktuellesDatum = "";
 ========================== */
 
 let fahrerStammdaten = [];
-
+let wochenmatrix = [];
 
 let plan = {};
 
@@ -504,6 +504,8 @@ async function ladeWochenmatrix() {
             .select("*");
 
   console.log("WOCHENMATRIX:", data);
+    wochenmatrix = data;
+
 console.log("WM_ERROR:", error);
 
     if (error) {
