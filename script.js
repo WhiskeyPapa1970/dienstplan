@@ -366,7 +366,6 @@ if (isNaN(von) || isNaN(bis))
             "<tr>" +
             "<td class='fahrer'>" +
             fahrer.name +
-            "<br>" +
               "</td>";
 
         for (let t = 0; t < tage.length; t++) {
