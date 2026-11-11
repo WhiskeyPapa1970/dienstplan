@@ -16,33 +16,8 @@ let aktuellesDatum = "";
    STAMMDATEN
 ========================== */
 
-let fahrerStammdaten = [
-    {
-        name: "Müller",
-        dienst: "WN01",
-        fahrzeug: "W4711"
-    },
-    {
-        name: "Huber",
-        dienst: "WN02",
-        fahrzeug: "W4723"
-    },
-    {
-        name: "Maier",
-        dienst: "A01",
-        fahrzeug: "W4718"
-    },
-    {
-        name: "Berger",
-        dienst: "WN03",
-        fahrzeug: "W4730"
-    },
-    {
-        name: "Schmidt",
-        dienst: "Reserve",
-        fahrzeug: "W4735"
-    }
-];
+let fahrerStammdaten = [];
+
 
 let plan = {};
 
