@@ -374,14 +374,32 @@ const datum =
                     )
                 ];
 
-            if (!daten) {
+          if (!daten) {
 
-                daten = {
-                    art: "Dienst",
-                    dienst: fahrer.dienst,
-                    fahrzeug: fahrer.fahrzeug
-                };
-            }
+    const wochentag =
+        [
+            "Sonntag",
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag",
+            "Samstag"
+        ][tag.getDay()];
+
+    const eintrag =
+        wochenmatrix.find(
+            w =>
+                w.fahrer === fahrer.name &&
+                w.wochentag === wochentag
+        );
+
+    daten = {
+        art: "Dienst",
+        dienst: eintrag?.dienst || "",
+        fahrzeug: eintrag?.fahrzeug || ""
+    };
+}
 
             let text1 = "";
             let text2 = "";
