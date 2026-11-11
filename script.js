@@ -16,7 +16,7 @@ let aktuellesDatum = "";
    STAMMDATEN
 ========================== */
 
-const fahrerStammdaten = [
+let fahrerStammdaten = [
     {
         name: "Müller",
         dienst: "WN01",
@@ -521,7 +521,40 @@ async function testeSupabase() {
 }
 console.log("TEST START");
 testeSupabase();
+async function ladeFahrer() {
+
+    const { data, error } =
+        await supabaseClient
+            .from("Fahrer_Stammdaten")
+            .select("*");
+
+    console.log("FAHRER:", data);
+
+    if (error) {
+
+        console.log(error);
+        return;
+    }
+
+    fahrerStammdaten = data.map(
+        fahrer => ({
+
+            name:
+                fahrer.familienname,
+
+            dienst:
+                fahrer.standarddienst,
+
+            fahrzeug:
+                fahrer.standardfahrzeug
+
+        })
+    );
+
+    ladePlan();
+}
 ladeDienste();
+ladeFahrer();
 async function ladeDienste() {
 
     const dienstSelect =
