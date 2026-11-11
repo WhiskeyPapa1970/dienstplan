@@ -530,6 +530,7 @@ async function ladeFahrer() {
 }
 ladeDienste();
 ladeFahrer();
+ladeFahrzeuge();
 async function ladeDienste() {
 
     const dienstSelect =
@@ -565,6 +566,47 @@ async function ladeDienste() {
             dienst.bezeichnung;
 
         dienstSelect.appendChild(
+            option
+        );
+
+    });
+}
+async function ladeFahrzeuge() {
+
+    const fahrzeugSelect =
+        document.getElementById(
+            "fahrzeugInput"
+        );
+
+    fahrzeugSelect.innerHTML = "";
+
+    const { data, error } =
+        await supabaseClient
+            .from("Fahrzeug_Stammdaten")
+            .select("*");
+
+    console.log("FAHRZEUGE:", data);
+
+    if (error) {
+
+        console.log(error);
+        return;
+    }
+
+    data.forEach(fahrzeug => {
+
+        const option =
+            document.createElement(
+                "option"
+            );
+
+        option.value =
+            fahrzeug.interne_ID;
+
+        option.textContent =
+            fahrzeug.interne_ID;
+
+        fahrzeugSelect.appendChild(
             option
         );
 
