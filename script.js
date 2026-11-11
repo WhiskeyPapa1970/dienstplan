@@ -520,3 +520,44 @@ async function testeSupabase() {
 }
 console.log("TEST START");
 testeSupabase();
+ladeDienste();
+async function ladeDienste() {
+
+    const dienstSelect =
+        document.getElementById(
+            "dienstInput"
+        );
+
+    dienstSelect.innerHTML = "";
+
+    const { data, error } =
+        await supabaseClient
+            .from("Dienste")
+            .select("*")
+            .order("bezeichnung");
+
+    if (error) {
+
+        console.log(error);
+        return;
+    }
+
+    data.forEach(dienst => {
+
+        const option =
+            document.createElement(
+                "option"
+            );
+
+        option.value =
+            dienst.bezeichnung;
+
+        option.textContent =
+            dienst.bezeichnung;
+
+        dienstSelect.appendChild(
+            option
+        );
+
+    });
+}
