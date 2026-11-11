@@ -515,8 +515,8 @@ async function testeSupabase() {
             .from("Dienste")
             .select("*");
 
-    console.log(data);
-    console.log(error);
+    console.log("DATA:",data);
+    console.log("ERROR:",error);
 }
 console.log("TEST START");
 testeSupabase();
