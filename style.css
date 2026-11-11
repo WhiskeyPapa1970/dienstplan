@@ -211,3 +211,26 @@ th {
 .sonntag {
     background-color: #fee2e2;
 }
+.menu {
+    width: 220px;
+    min-width: 220px;
+    background: #f3f4f6;
+    border-right: 1px solid #d1d5db;
+    padding: 15px;
+}
+
+.menu h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.menu button {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.menu hr {
+    margin: 12px 0;
+}
