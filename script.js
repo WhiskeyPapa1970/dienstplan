@@ -1,4 +1,14 @@
+const supabaseUrl =
+    "https://wosxlwsnkssergfvbzla.supabase.co";
 
+const supabaseKey =
+    "sb_publishable_6tO_oqxyRqx241aeypFqTw_JArFTo3-";
+
+const supabase =
+    window.supabase.createClient(
+        supabaseUrl,
+        supabaseKey
+    );
 let aktuellerFahrer = "";
 let aktuellesDatum = "";
 
@@ -498,3 +508,15 @@ document.getElementById("bis").value =
     bisDatum;
     ladePlan();
 };
+async function testeSupabase() {
+
+    const { data, error } =
+        await supabase
+            .from("Dienste")
+            .select("*");
+
+    console.log(data);
+    console.log(error);
+}
+
+testeSupabase();
