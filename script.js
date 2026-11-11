@@ -482,7 +482,7 @@ const bisDatum =
 
 document.getElementById("bis").value =
     bisDatum;
-    ladePlan();
+   
 };
 async function testeSupabase() {
 
