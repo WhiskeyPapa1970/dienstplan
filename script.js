@@ -503,7 +503,8 @@ async function ladeWochenmatrix() {
             .from("Wochenmatrix")
             .select("*");
 
-    console.log("WOCHENMATRIX:", data);
+  console.log("WOCHENMATRIX:", data);
+console.log("WM_ERROR:", error);
 
     if (error) {
 
