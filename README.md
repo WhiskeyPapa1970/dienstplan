@@ -1,4 +1,4 @@
-Dienstplan V0.5
+Dienstplan V_2026
 
 Status:
 Präsentationsversion
