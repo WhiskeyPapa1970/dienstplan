@@ -367,9 +367,7 @@ if (isNaN(von) || isNaN(bis))
             "<td class='fahrer'>" +
             fahrer.name +
             "<br>" +
-            "<button class='loeschen' onclick=\"fahrerLoeschen('" +
-            fahrer.name +
-            "')\">🗑 Löschen</button>" +
+             +
             "</td>";
 
         for (let t = 0; t < tage.length; t++) {
