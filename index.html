@@ -26,31 +26,72 @@
         <button onclick="ladePlan()">
            Dienstplan Laden
         </button>
+    </div>
+
+   <div class="layout">
+
+    <div class="menu">
+
+        <h3>Menü</h3>
 
         <button onclick="fahrerHinzufuegen()">
-            neuen Fahrer anlegen
+            + Fahrer anlegen
+        </button>
+
+        <button onclick="fahrerInaktivSetzen()">
+            Fahrer inaktiv setzen
+        </button>
+
+        <hr>
+
+        <button onclick="fahrzeugAnlegen()">
+            + Fahrzeug anlegen
+        </button>
+
+        <button onclick="fahrzeugLoeschen()">
+            Fahrzeug löschen
+        </button>
+
+        <hr>
+
+        <button onclick="dienstAnlegen()">
+            + Dienst anlegen
+        </button>
+
+        <button onclick="dienstLoeschen()">
+            Dienst löschen
+        </button>
+
+        <hr>
+
+        <button onclick="fuhrpark()">
+            🚚 Fuhrpark
+        </button>
+
+        <button onclick="administration()">
+            ⚙ Admin
         </button>
 
     </div>
 
-    <div class="layout">
+    <div class="planbereich">
 
-        <div class="planbereich">
+        <table>
+            <thead id="thead"></thead>
+            <tbody id="tbody"></tbody>
+        </table>
 
-            <table>
-                <thead id="thead"></thead>
-                <tbody id="tbody"></tbody>
-            </table>
+    </div>
 
-        </div>
+    <div class="sidebar">
 
-        <div class="sidebar">
+        <h3>Offene Dienste</h3>
 
-            <h3>Offene Dienste</h3>
+        <div id="offeneDienste"></div>
 
-            <div id="offeneDienste"></div>
+    </div>
 
-        </div>
+</div>
 
     </div>
 
