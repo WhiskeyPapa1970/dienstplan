@@ -496,6 +496,23 @@ async function testeSupabase() {
 }
 console.log("TEST START");
 testeSupabase();
+async function ladeWochenmatrix() {
+
+    const { data, error } =
+        await supabaseClient
+            .from("Wochenmatrix")
+            .select("*");
+
+    console.log("WOCHENMATRIX:", data);
+
+    if (error) {
+
+        console.log(error);
+        return;
+    }
+
+}
+
 async function ladeFahrer() {
 
     const { data, error } =
@@ -531,6 +548,8 @@ async function ladeFahrer() {
 ladeDienste();
 ladeFahrer();
 ladeFahrzeuge();
+ladeWochenmatrix();
+
 async function ladeDienste() {
 
     const dienstSelect =
