@@ -51,7 +51,7 @@ async function fahrerHinzufuegen() {
         .from("Fahrer_Stammdaten")
         .select("*")
         .eq("status", "Aktiv");
-            ]);
+          
 
     if (error) {
 
