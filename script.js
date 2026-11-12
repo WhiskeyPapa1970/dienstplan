@@ -407,7 +407,10 @@ const datum =
             "Freitag",
             "Samstag"
         ][tag.getDay()];
-
+console.log(
+    "WM Größe:",
+    wochenmatrix.length
+);
     const eintrag =
         wochenmatrix.find(
             w =>
