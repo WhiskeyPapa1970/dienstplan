@@ -74,7 +74,7 @@ async function fahrerInaktivSetzen() {
 
     const { error } =
         await supabaseClient
-           const { data, error } =
+   
     await supabaseClient
         .from("Fahrer_Stammdaten")
         .select("*")
