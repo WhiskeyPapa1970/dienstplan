@@ -65,7 +65,33 @@ async function fahrerHinzufuegen() {
 
     ladeFahrer();
 }
+async function fahrerInaktivSetzen() {
 
+    const name =
+        prompt("Fahrername:");
+
+    if (!name) return;
+
+    const { error } =
+        await supabaseClient
+            .from("Fahrer_Stammdaten")
+            .update({
+                aktiv: "Nein"
+            })
+            .eq(
+                "familienname",
+                name
+            );
+
+    if (error) {
+
+        console.log(error);
+        alert("Fehler");
+        return;
+    }
+
+    ladeFahrer();
+}
 
 /* ==========================
    MODAL
