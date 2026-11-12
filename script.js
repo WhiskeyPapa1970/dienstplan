@@ -279,7 +279,7 @@ if (stamm) {
         datum: datum,
         dienst: eintrag?.dienst || ""
     });
-}
+}}}
     return liste;
 }
 
