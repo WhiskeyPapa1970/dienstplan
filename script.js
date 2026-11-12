@@ -547,6 +547,7 @@ async function ladeWochenmatrix() {
 
   console.log("WOCHENMATRIX:", data);
     wochenmatrix = data;
+    ladePlan();
 
 console.log("WM_ERROR:", error);
 
