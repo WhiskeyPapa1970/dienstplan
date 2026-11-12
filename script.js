@@ -46,14 +46,11 @@ async function fahrerHinzufuegen() {
 
     if (!name) return;
 
-    const { error } =
-        await supabaseClient
-            .from("Fahrer_Stammdaten")
-            .insert([
-                {
-                    familienname: name,
-                    status: "Aktiv"
-                }
+   const { data, error } =
+    await supabaseClient
+        .from("Fahrer_Stammdaten")
+        .select("*")
+        .eq("status", "Aktiv");
             ]);
 
     if (error) {
@@ -74,11 +71,14 @@ async function fahrerInaktivSetzen() {
 
     const { error } =
         await supabaseClient
-   
-    await supabaseClient
-        .from("Fahrer_Stammdaten")
-        .select("*")
-        .eq("status", "Aktiv"); 
+            .from("Fahrer_Stammdaten")
+            .update({
+                status: "Inaktiv"
+            })
+            .eq(
+                "familienname",
+                name
+            );
 
     if (error) {
 
