@@ -611,6 +611,7 @@ async function ladeFahrer() {
 
     ladePlan();
 }
+ladeAbwesenheitsarten();
 ladeDienste();
 ladeFahrzeuge();
 ladeWochenmatrix();
@@ -693,6 +694,45 @@ async function ladeFahrzeuge() {
             fahrzeug.interne_ID;
 
         fahrzeugSelect.appendChild(
+            option
+        );
+
+    });
+}
+async function ladeAbwesenheitsarten() {
+
+    const artSelect =
+        document.getElementById(
+            "artInput"
+        );
+
+    artSelect.innerHTML = "";
+
+    const { data, error } =
+        await supabaseClient
+            .from("Abwesenheitsarten")
+            .select("*");
+
+    if (error) {
+
+        console.log(error);
+        return;
+    }
+
+    data.forEach(art => {
+
+        const option =
+            document.createElement(
+                "option"
+            );
+
+        option.value =
+            art.art;
+
+        option.textContent =
+            art.art;
+
+        artSelect.appendChild(
             option
         );
 
