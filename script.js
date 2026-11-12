@@ -213,7 +213,7 @@ function speichernZelle() {
             dienst: dienst,
             fahrzeug: fahrzeug
         };
-
+console.log("GESPEICHERT:", plan[key]);
     } else {
 
         plan[key] = {
