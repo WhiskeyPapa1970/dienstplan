@@ -727,10 +727,10 @@ async function ladeAbwesenheitsarten() {
             );
 
         option.value =
-            art.art;
+            art.Bezeichnung;
 
         option.textContent =
-            art.art;
+            art.Bezeichnung;
 
         artSelect.appendChild(
             option
