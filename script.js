@@ -274,7 +274,12 @@ if (stamm) {
                 w.fahrer === fahrerName &&
                 w.wochentag === wochentag
         );
-
+console.log(
+    "OFFENER DIENST:",
+    fahrerName,
+    wochentag,
+    eintrag
+);
     liste.push({
         datum: datum,
         dienst: eintrag?.dienst || ""
