@@ -130,14 +130,32 @@ function zelleBearbeiten(name, datum) {
         findeStammdaten(name);
 console.log("STAMM", stamm);
     console.log("PLAN", plan[k]);
-    if (!plan[k]) {
+   if (!plan[k]) {
 
-        plan[k] = {
-            art: "Dienst",
-            dienst: stamm.dienst,
-            fahrzeug: stamm.fahrzeug
-        };
-    }
+    const wochentag =
+        [
+            "Sonntag",
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag",
+            "Samstag"
+        ][new Date(datum).getDay()];
+
+    const eintrag =
+        wochenmatrix.find(
+            w =>
+                w.fahrer === name &&
+                w.wochentag === wochentag
+        );
+
+    plan[k] = {
+        art: "Dienst",
+        dienst: eintrag?.dienst || "",
+        fahrzeug: eintrag?.fahrzeug || ""
+    };
+}
 
     document.getElementById("artInput").value =
         plan[k].art || "Dienst";
