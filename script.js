@@ -74,14 +74,11 @@ async function fahrerInaktivSetzen() {
 
     const { error } =
         await supabaseClient
-            .from("Fahrer_Stammdaten")
-            .update({
-                aktiv: "Nein"
-            })
-            .eq(
-                "familienname",
-                name
-            );
+           const { data, error } =
+    await supabaseClient
+        .from("Fahrer_Stammdaten")
+        .select("*")
+        .eq("status", "Aktiv"); 
 
     if (error) {
 
