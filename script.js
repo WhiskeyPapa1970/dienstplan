@@ -88,7 +88,7 @@ async function fahrerInaktivSetzen() {
     }
 
     ladeFahrer();
-    ladePlan();
+   
 }
 
 /* ==========================
@@ -585,9 +585,10 @@ async function ladeFahrer() {
     ladePlan();
 }
 ladeDienste();
-ladeFahrer();
 ladeFahrzeuge();
 ladeWochenmatrix();
+ladeFahrer();
+
 
 async function ladeDienste() {
 
