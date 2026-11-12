@@ -578,20 +578,14 @@ async function ladeFahrer() {
         return;
     }
 
-    fahrerStammdaten = data.map(
-        fahrer => ({
+  fahrerStammdaten = data.map(
+    fahrer => ({
 
-            name:
-                fahrer.familienname,
+        name:
+            fahrer.familienname
 
-            dienst:
-                fahrer.standarddienst,
-
-            fahrzeug:
-                fahrer.standardfahrzeug
-
-        })
-    );
+    })
+);
 
     ladePlan();
 }
