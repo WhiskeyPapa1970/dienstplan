@@ -252,36 +252,34 @@ function offeneDiensteErmitteln() {
                     fahrerName
                 );
 
-            if (stamm) {
+if (stamm) {
 
-                liste.push({
-                    datum: datum,
-      const datumObj =
-    new Date(datum);
+    const datumObj =
+        new Date(datum);
 
-const wochentag =
-    [
-        "Sonntag",
-        "Montag",
-        "Dienstag",
-        "Mittwoch",
-        "Donnerstag",
-        "Freitag",
-        "Samstag"
-    ][datumObj.getDay()];
+    const wochentag =
+        [
+            "Sonntag",
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag",
+            "Samstag"
+        ][datumObj.getDay()];
 
-const eintrag =
-    wochenmatrix.find(
-        w =>
-            w.fahrer === fahrerName &&
-            w.wochentag === wochentag
-    );
+    const eintrag =
+        wochenmatrix.find(
+            w =>
+                w.fahrer === fahrerName &&
+                w.wochentag === wochentag
+        );
 
-liste.push({
-    datum: datum,
-    dienst: eintrag?.dienst || ""
-});
-
+    liste.push({
+        datum: datum,
+        dienst: eintrag?.dienst || ""
+    });
+}
     return liste;
 }
 
