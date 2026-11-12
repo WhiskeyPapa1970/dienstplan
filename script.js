@@ -39,39 +39,33 @@ function findeStammdaten(name) {
 /* ==========================
    FAHRER
 ========================== */
+async function fahrerHinzufuegen() {
 
-function fahrerHinzufuegen() {
-
-    const name = prompt("Fahrername:");
+    const name =
+        prompt("Fahrername:");
 
     if (!name) return;
 
-    fahrerStammdaten.push({
-        name: name,
-        dienst: "",
-        fahrzeug: ""
-    });
+    const { error } =
+        await supabaseClient
+            .from("Fahrer_Stammdaten")
+            .insert([
+                {
+                    familienname: name,
+                    status: "Aktiv"
+                }
+            ]);
 
-    ladePlan();
-}
+    if (error) {
 
-function fahrerLoeschen(name) {
-
-    if (!confirm(name + " löschen?")) {
+        console.log(error);
+        alert("Fehler beim Speichern");
         return;
     }
 
-    const index =
-        fahrerStammdaten.findIndex(function (f) {
-            return f.name === name;
-        });
-
-    if (index > -1) {
-        fahrerStammdaten.splice(index, 1);
-    }
-
-    ladePlan();
+    ladeFahrer();
 }
+
 
 /* ==========================
    MODAL
