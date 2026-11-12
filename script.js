@@ -46,12 +46,15 @@ async function fahrerHinzufuegen() {
 
     if (!name) return;
 
-   const { data, error } =
-    await supabaseClient
-        .from("Fahrer_Stammdaten")
-        .select("*")
-        .eq("status", "Aktiv");
-          
+    const { error } =
+        await supabaseClient
+            .from("Fahrer_Stammdaten")
+            .insert([
+                {
+                    familienname: name,
+                    status: "Aktiv"
+                }
+            ]);
 
     if (error) {
 
@@ -554,10 +557,11 @@ console.log("WM_ERROR:", error);
 
 async function ladeFahrer() {
 
-    const { data, error } =
-        await supabaseClient
-            .from("Fahrer_Stammdaten")
-            .select("*");
+   const { data, error } =
+    await supabaseClient
+        .from("Fahrer_Stammdaten")
+        .select("*")
+        .eq("status", "Aktiv");
 
     console.log("FAHRER:", data);
 
