@@ -128,9 +128,7 @@ function zelleBearbeiten(name, datum) {
 
     const stamm =
         findeStammdaten(name);
-console.log("STAMM", stamm);
-    console.log("PLAN", plan[k]);
-   if (!plan[k]) {
+ {
 
     const wochentag =
         [
@@ -165,8 +163,7 @@ console.log("STAMM", stamm);
 
     document.getElementById("fahrzeugInput").value =
         plan[k].fahrzeug || "";
-    console.log("DIENST:", plan[k].dienst);
-console.log("FAHRZEUG:", plan[k].fahrzeug);
+
 
 
     artGeaendert();
@@ -184,7 +181,7 @@ function schliessenModal() {
 }
 
 function speichernZelle() {
-console.log("SPEICHERN GEDRÜCKT");
+
     const art =
         document.getElementById(
             "artInput"
@@ -200,10 +197,6 @@ console.log("SPEICHERN GEDRÜCKT");
         "fahrzeugInput"
     ).value;
 
-console.log("ART:", art);
-console.log("DIENST SELECT:", dienst);
-console.log("FAHRZEUG SELECT:", fahrzeug);
-
     const key =
         getKey(
             aktuellerFahrer,
@@ -217,7 +210,7 @@ console.log("FAHRZEUG SELECT:", fahrzeug);
             dienst: dienst,
             fahrzeug: fahrzeug
         };
-console.log("GESPEICHERT:", plan[key]);
+
     } else {
 
         plan[key] = {
@@ -263,11 +256,31 @@ function offeneDiensteErmitteln() {
 
                 liste.push({
                     datum: datum,
-                    dienst: stamm.dienst
-                });
-            }
-        }
-    }
+      const datumObj =
+    new Date(datum);
+
+const wochentag =
+    [
+        "Sonntag",
+        "Montag",
+        "Dienstag",
+        "Mittwoch",
+        "Donnerstag",
+        "Freitag",
+        "Samstag"
+    ][datumObj.getDay()];
+
+const eintrag =
+    wochenmatrix.find(
+        w =>
+            w.fahrer === fahrerName &&
+            w.wochentag === wochentag
+    );
+
+liste.push({
+    datum: datum,
+    dienst: eintrag?.dienst || ""
+});
 
     return liste;
 }
@@ -432,10 +445,7 @@ const datum =
             "Freitag",
             "Samstag"
         ][tag.getDay()];
-console.log(
-    "WM Größe:",
-    wochenmatrix.length
-);
+
     const eintrag =
         wochenmatrix.find(
             w =>
