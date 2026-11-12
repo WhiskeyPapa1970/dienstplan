@@ -196,9 +196,13 @@ console.log("SPEICHERN GEDRÜCKT");
         ).value;
 
     const fahrzeug =
-        document.getElementById(
-            "fahrzeugInput"
-        ).value;
+    document.getElementById(
+        "fahrzeugInput"
+    ).value;
+
+console.log("ART:", art);
+console.log("DIENST SELECT:", dienst);
+console.log("FAHRZEUG SELECT:", fahrzeug);
 
     const key =
         getKey(
