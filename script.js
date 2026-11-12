@@ -147,6 +147,9 @@ console.log("STAMM", stamm);
 
     document.getElementById("fahrzeugInput").value =
         plan[k].fahrzeug || "";
+    console.log("DIENST:", plan[k].dienst);
+console.log("FAHRZEUG:", plan[k].fahrzeug);
+
 
     artGeaendert();
 
