@@ -184,7 +184,7 @@ function schliessenModal() {
 }
 
 function speichernZelle() {
-
+console.log("SPEICHERN GEDRÜCKT");
     const art =
         document.getElementById(
             "artInput"
