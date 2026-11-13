@@ -237,7 +237,9 @@ function offeneDiensteErmitteln() {
 
         if (
             eintrag.art === "Urlaub" ||
+            eintrag.art === "Frei" ||
             eintrag.art === "Krank" ||
+            eintrag.art === "Todesfall" ||
             eintrag.art === "Zeitausgleich"
         ) {
 
