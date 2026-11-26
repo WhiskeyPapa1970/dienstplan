@@ -1,19 +1,3 @@
-Dienstplan V_2026
+Dienstplan Version 2027 - Sicherungsdatei
 
-Status:
-Präsentationsversion
-
-Stand:
-November 2026
-
-Umgesetzt:
-- Dienstplan-Matrix
-- Abwesenheiten
-- Offene Dienste
-- Dienst- und Fahrzeugauswahl
-
-Nächste Schritte:
-- Supabase-Anbindung
-- Wochenmuster
-- Fahrzeugverwaltung
-- Historie
+Diese Version ist eine funktionierende Version um eventuell defekte Repositorys wieder her zu stellen
